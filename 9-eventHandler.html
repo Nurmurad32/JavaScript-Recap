@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handler</title>
+</head>
+
+<body>
+    <button onclick="clicked1()">Clicked Message 1</button>
+    <button onclick="clicked2()">Clicked Message 1</button>
+
+    <p id="showClickedMessage">Here you can see your Clicked Message</p>
+
+    <b>
+        <p>For Images:</p>
+    </b>
+    <button onClick="grocery()">Food Image</button>
+    <button onClick="art()">Cart image</button>
+    <br>
+    <img id="changeImage" src="#" alt="" style="height: 300px; width: 300px; margin-top: 10px;">
+
+
+
+    <!-- --------------------------------------------------- -->
+                         <!-- JS Code Start -->
+    <!-- --------------------------------------------------- -->
+    <script>
+
+        function clicked1() {
+            var showMessage = document.getElementById("showClickedMessage")
+            showMessage.innerHTML = "You have clicked Message 1"
+        }
+
+        function clicked2() {
+            var showMessage = document.querySelector("#showClickedMessage")
+            showMessage.innerHTML = "You have clicked Message 2"
+        }
+
+        var changedImage = document.getElementById("changeImage")
+        function grocery() {
+            changedImage.src = "images/food.jpg"
+        }
+        function art() {
+            changedImage.src = "images/cart.jpg"
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slide</title>
+</head>
+<body>
+    <button onclick="prev()">Previous</button>
+
+    <img id="selectedImg" src="images/1.jpg" alt="" style="height: 300px; width: 300px; margin: 30px;">
+
+    <button onclick="next()">Next</button>
+
+    <script>
+        var imgTag = document.getElementById("selectedImg")
+
+        var photos = ["images/1.jpg", "images/2.jpg", "images/3.jpg"]
+        var count = 0;
+
+        function next(){
+            count++;
+            // imgTag.src = photos[0];
+
+            if(count >= photos.length){
+                count = 0;
+                imgTag.src = photos[count];
+            }
+            else{
+                imgTag.src = photos[count];
+            }
+        }
+
+        function prev(){
+            count--;
+            // imgTag.src = photos[0];
+
+            if(count < 0){
+                count = photos.length - 1;
+                imgTag.src = photos[count];
+            }
+            else{
+                imgTag.src = photos[count];
+            }
+        }
+
+    </script>
+</body>
+</html>

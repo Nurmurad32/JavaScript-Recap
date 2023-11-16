@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>My heading </h1>
+    <!-- Change this using JS getElementByID -->
+    <h1 id="heading1">My heading</h1>
+
+    <!-- Change this using JS getElementByClassName -->
+    <p class="pTag">My heading</p>
+    <p class="pTag">My heading</p>
+
+    <!-- querySelector -->
+    <p>-----------------Query Selector----------------</p>
+    <a href="#">Home</a>
+    <ul>
+        <li><a href="#">Tutorial</a></li>
+        <li id="city">Bangladesh</li>
+    </ul>
+    <div class="my-div">
+        <a href="#">Contact</a>
+    </div>
+
+    
+
+    <!-- --------------------------------------------------- -->
+                     <!-- JS Code Start -->
+    <!-- --------------------------------------------------- -->
+    <script>
+        // DOM Elements
+        // getElementById & innerHTML
+        var heading = document.getElementById("heading1")
+        heading.innerHTML = "Hello"
+
+        // getElementsByTagName     ||    getElementsByClassName 
+        // return tag / Class collection in Array format.
+
+        var byClass = document.getElementsByClassName("pTag")
+        byClass[0].innerHTML = "Changing this using ClassName"
+
+
+        // querySelector => 
+        // class select by (.) ;
+        // id select by (#)
+        // tag name select by ... just tag name
+
+        document.querySelector("a").innerHTML = "Home Select using querySelector tag"
+        document.querySelector("li a").innerHTML = "Tutorial Select using querySelector innerTag"
+        document.querySelector(".my-div a").innerHTML = "Contact Change using querySelector"
+        document.querySelector("#city").innerHTML = "Bangladesh Select using querySelector id"
+
+        // querySelectorAll => return collection in Array format like tagname & ClassName.
+
+
+        // Create Element
+        var subText = document.createElement("p")
+        var text = document.createTextNode("Here you can see contact info");
+        subText.appendChild(text); // for remove use removeChild
+        // appendChild add the element After if we want to add before then use insertBefore(which element, where) ... this 2 parameter it takes.
+
+        var myDiv = document.querySelector(".my-div");
+        myDiv.appendChild(subText);
+
+        // properties
+            // 1. .classList
+            // 2. .classList.add("")
+            // 3. .classList.remove("")
+
+    </script>
+</body>
+
+</html>
